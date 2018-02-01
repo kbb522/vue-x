@@ -1,0 +1,18 @@
+// 页面标题头部
+
+.nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 40px;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: #f7f7f8;
+  .hairline(bottom, @border-default-color);
+  backface-visibility: hidden;
+}
+// 如果有标题就调整page-content的位子
+.nav ~ .page-content {
+  top: @nav-height;
+}
