@@ -1,24 +1,28 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-
-//import HelloWorld from '@/components/HelloWorld'
-//import Flex from '@/demo/flex'
+import Flex from '@/demo/Flex'
 import Home from '@/demo/Home'
+import Button from '@/demo/Button'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
+      name: 'Home',
       component: Home
+    }, {
+      path: '/flex',
+      name: 'Flex',
+      component: Flex
+    }, {
+      path: '/button',
+      name: 'Button',
+      component: Button
     }
-    // , {
-    //   path: '/flex',
-    //   name: 'Flex',
-    //   component: Flex
-    // }
   ]
 })
+
+export default router

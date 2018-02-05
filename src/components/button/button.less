@@ -1,0 +1,87 @@
+@import '../veriables.less';
+@import '../mixin.less';
+
+.button {
+  &.button-danger {
+    background-color: @button-sub-color;
+    &:active {
+      background-color: darken(@button-sub-color, 10%);
+    }
+  }
+
+  &.button-light {
+    .button-variant(#f7f7f7, #dedede);
+    .hairline-border(rgba(0,0,0,.2), .25rem);
+    color: #666;
+  }
+}
+
+.button {
+  background-color: @button-main-color;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  border-radius: 0.25rem;
+  line-height: @button-height;
+  height: @button-height;
+  appearance: none;
+  padding: 0 0.8rem;
+  margin: 0;
+  white-space: nowrap;
+  position: relative;
+  text-overflow: ellipsis;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: 0;
+
+  input[type="submit"] &,
+  input[type="button"] & {
+    width: 100%;
+  }
+
+  &:active {
+    background-color: darken(@button-main-color, 10%);
+  }
+
+  &.button-large,
+  .button-large & {
+    font-size: 0.9rem;
+    height: @button-large-height;
+    line-height: @button-large-height;
+  }
+
+  &.button-small,
+  .button-small & {
+    font-size: 0.7rem;
+    height: @button-small-height;
+    line-height: @button-small-height;
+  }
+
+  &.button-round,
+  .button-round & {
+    &,
+    &:after {
+      border-radius: (@button-height);
+    }
+
+    &.button-large:after {
+      border-radius: (@button-large-height - 0.1rem);
+    }
+  }
+
+  &.disabled {
+    .hairline-border-remove();
+    .button-variant(#c8c9cb, #c8c9cb);
+    color: white;
+    cursor: not-allowed;
+  }
+}
+
+.button-variant(@color, @color-active) {
+  background: @color;
+
+  &:active {
+    background: @color-active;
+  }
+}

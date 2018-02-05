@@ -1,0 +1,32 @@
+@import '../veriables.less';
+@import '../mixin.less';
+
+.nav .button {
+  position: relative;
+  z-index: 20; // position the buttons on top of .title
+  background: transparent;
+  color: @color-primary;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  padding: 0;
+  font-size: 0.6rem;
+  line-height: @nav-height;
+  width: @nav-height;
+  height: @nav-height;
+  text-align: center;
+
+  &.active,
+  &:active {
+    color: darken(@color-primary, 10%);
+    background: transparent;
+  }
+
+  &.left {
+    float: left;
+  }
+
+  &.right {
+    float: right;
+  }
+}

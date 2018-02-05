@@ -1,13 +1,13 @@
 <template>
-  <nav class="nav">
-    <slot></slot>
-  </nav>
+  <h3 class="title"><slot></slot></h3>
 </template>
+
 <script>
 export default {
 
 }
 </script>
+
 <style lang="less">
-@import './header.less';
+@import './title.less';
 </style>
