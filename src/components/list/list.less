@@ -1,0 +1,167 @@
+@import '../veriables.less';
+@import '../mixin.less';
+
+.list {
+  margin: 1rem 0;
+  font-size: 0.85rem;
+
+  ul {
+    .hairline(top, @border-color);
+    .hairline(bottom, @border-color);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    li {
+      transition: all 0.2s;
+
+      &:active {
+        background-color: @border-color;
+      }
+    }
+  }
+
+  .list-append,
+  .list-title {
+    font-size: 0.8rem;
+    color: @color-text-gray;
+    padding: 0.2rem 0.75rem;
+  }
+
+  .list-append {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.7rem;
+  }
+
+  li + li {
+    .item-content {
+      .hairline(top, @border-color);
+    }
+  }
+
+  .item-inner {
+    width: 100%;
+    display: flex;
+    padding: 0 0 0 0.75rem;
+    position: relative;
+  }
+
+  .item-media {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & + .item-content {
+      margin-left: 0.7rem;
+    }
+  }
+
+
+  .item-content {
+    width: 100%;
+    position: relative;
+    padding: 0.4rem 0.75rem 0.4rem 0;
+  }
+
+  .item-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .item-subtitle {
+    font-size: 0.5rem;
+    color: @color-text-gray;
+  }
+
+  .item-after {
+    margin-left: 0.5rem;
+    color: @color-text-gray;
+    flex-shrink: 1;
+    display: flex;
+    align-items: center;
+
+    .badge {
+      display: inline-block;
+      padding: 0.1rem 0.45rem 0.15rem;
+      font-size: 0.6rem;
+      line-height: 1;
+      padding-top: 0.2rem;
+      color: white;
+      background-color: #e06566;
+      border-radius: 5rem;
+    }
+  }
+
+  .label-switch {
+    display: block;
+  }
+}
+
+// Checkboxes
+label.label-checkbox {
+  cursor: pointer;
+  .item-content {
+    padding-right: 2rem;
+  }
+  i.icon-form-checkbox {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: .5rem;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    border-radius: 22px;
+    border: 1px solid #c7c7cc;
+    box-sizing: border-box;
+
+    &:after {
+      content:' ';
+      position: absolute;
+      left: 50%;
+      margin-left: -6px;
+      top: 50%;
+      margin-top: -4px;
+      width: 12px;
+      height: 9px;
+    }
+  }
+  input[type="checkbox"] {
+    display: none;
+    &:checked {
+      ~ i.icon-form-checkbox {
+        border: none;
+        background-color: #5bb8cb;
+      }
+      ~ i.icon-form-checkbox:after {
+        background: no-repeat center;
+        .encoded-svg-background("<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 12 9' xml:space='preserve'><polygon fill='#ffffff' points='12,0.7 11.3,0 3.9,7.4 0.7,4.2 0,4.9 3.9,8.8 3.9,8.8 3.9,8.8 '/></svg>");
+        -webkit-background-size: 12px 9px;
+        background-size: 12px 9px;
+      }
+    }
+  }
+}
+label.label-radio {
+  cursor: pointer;
+  input[type="checkbox"], input[type="radio"] {
+    display: none;
+    ~ .item-content {
+      padding-right: 2rem;
+    }
+    &:checked ~ .icon-form-radio{
+      content: " ";
+      background: no-repeat center;
+      .encoded-svg-background("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 10'><polygon fill='#5bb8cb' points='11.6,0 4.4,7.2 1.4,4.2 0,5.6 4.4,10 4.4,10 4.4,10 13,1.4 '/></svg>");
+      background-position: center;
+      background-size: 15px 11px;
+      width: 2rem;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

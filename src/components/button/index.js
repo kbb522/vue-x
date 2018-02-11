@@ -1,7 +1,7 @@
 import Button from './button'
-//import ButtonGroup from './button-group'
+import ButtonGroup from './button-group'
 
 export {
   Button,
-  //ButtonGroup
+  ButtonGroup
 }

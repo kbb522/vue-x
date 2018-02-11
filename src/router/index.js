@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Flex from '@/demo/Flex'
 import Home from '@/demo/Home'
+import Flex from '@/demo/Flex'
 import Button from '@/demo/Button'
+import ButtonGroup from '@/demo/Button-Group'
+import Grid from '@/demo/Grid'
+import List from '@/demo/List'
 
 Vue.use(Router)
 
@@ -18,9 +21,21 @@ const router = new Router({
       name: 'Flex',
       component: Flex
     }, {
+      path: '/button-group',
+      name: 'ButtonGroup',
+      component: ButtonGroup
+    }, {
       path: '/button',
       name: 'Button',
       component: Button
+    }, {
+      path: '/grid',
+      name: 'Grid',
+      component: Grid
+    }, {
+      path: '/list',
+      name: 'List',
+      component: List
     }
   ]
 })

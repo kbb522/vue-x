@@ -117,7 +117,29 @@
     background-color: @color;
   }
 }
+.hairline-border-before(@color, @radius) {
+  position: relative;
 
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid @color;
+    border-radius: @radius;
+    transform-origin: 0 0;
+    z-index: 0;
+    box-sizing: border-box;
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+      height: 200%;
+      width: 200%;
+      transform: scale(0.5);
+      border-radius: (@radius * 2);
+    }
+  }
+}
 .hairline-border(@color, @radius) {
   position: relative;
 
@@ -455,4 +477,10 @@
   background-image: -webkit-linear-gradient(@path, @colorX, @colorY);
   background-image: -ms-linear-gradient(@path, @colorX, @colorY);
   background-image: linear-gradient(@path, @colorX, @colorY);
+}
+
+// Encoded SVG Background
+.encoded-svg-background(@svg) {
+  @url: `encodeURIComponent(@{svg})`;
+  background-image: url("data:image/svg+xml;charset=utf-8,@{url}");
 }

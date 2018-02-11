@@ -1,16 +1,14 @@
 <template>
-<a href="javascript: void(0);" :class="
-  'button' +
+<div :class="
+  'buttons-group' +
   ' button-' + type +
   ' button-' + size +
   (round ? ' button-round' : '') +
-  (bordered ? ' button-bordered' : '') +
-  (active ? ' active' : '') +
-  (disabled ? ' disabled' : '')
-  ">
+  (bordered ? ' button-bordered' : '')
+">
 
   <slot></slot>
-</a>
+</div>
 </template>
 
 <script>
@@ -26,15 +24,11 @@ export default {
     },
     round: {
       type: Boolean,
-      default: false,
-    },
-    active: {
-      type: Boolean,
-      default: false,
+      default: false
     },
     disabled: {
       type: Boolean,
-      default: false,
+      default: false
     },
     bordered: {
       type: Boolean,
@@ -44,7 +38,6 @@ export default {
 }
 </script>
 
-
 <style lang="less">
-@import './button.less';
+@import './button-group.less';
 </style>

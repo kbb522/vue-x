@@ -1,0 +1,109 @@
+@import '../veriables.less';
+@import '../mixin.less';
+
+.buttons-group,
+.buttons-tab {
+  z-index: 10;
+  align-self: center; // vertical-align: middle
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.buttons-group {
+  margin: 1rem 0;
+
+  .button {
+    display: block;
+    border-radius: 0 0 0 0;
+    width: 100%;
+    flex: 1;
+    .hairline(left, @button-main-color);
+
+    &.active{
+
+    }
+    &:active {
+      background-color: darken(@button-main-color, 10%);
+      color: white;
+      z-index: 100;
+    }
+  }
+
+  .button:first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+    .hairline-remove(left);
+  }
+
+  .button:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+
+
+}
+
+.buttons-group.button-bordered {
+  border-radius: 0.25rem;
+  .hairline-border(@button-main-color, .25rem);
+  background-color: white;
+
+  .button {
+    color: @button-main-color;
+    background-color: transparent;
+    .hairline-border(@button-main-color, .25rem);
+    
+
+    &:before {
+      background-color: @button-main-color;
+    }
+    .hairline-border-remove();
+
+    &.active,
+    &:active {
+      background-color: @button-main-color;
+      color: white;
+    }
+  }
+}
+
+.buttons-group.button-round {
+  //.hairline-border(@button-main-color, @button-height);
+  //z-index: 100;
+
+  .button {
+    &:first-child {
+      border-radius: @button-height 0 0 @button-height;
+    }
+
+    &:last-child {
+      border-radius: 0 @button-height @button-height 0;
+    }
+  }
+
+  &.button-small {
+    //.hairline-border(@button-main-color, @button-small-height);
+
+    .button {
+      &:first-child {
+        border-radius: @button-small-height 0 0 @button-small-height;
+      }
+
+      &:last-child {
+        border-radius: 0 @button-small-height @button-small-height 0;
+      }
+    }
+  }
+
+  &.button-large {
+    //.hairline-border(@button-main-color, @button-large-height);
+
+    .button {
+      &:first-child {
+        border-radius: @button-large-height 0 0 @button-large-height;
+      }
+
+      &:last-child {
+        border-radius: 0 @button-large-height @button-large-height 0;
+      }
+    }
+  }
+}

@@ -19,6 +19,15 @@
       <li>
         <router-link :to="{ name: 'Button'}">Button</router-link>
       </li>
+      <li>
+        <router-link :to="{ name: 'ButtonGroup'}">ButtonGroup</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'Grid'}">Grid</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'List'}">List</router-link>
+      </li>
     </ul>
   </page-content>
 </div>

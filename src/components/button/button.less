@@ -4,6 +4,7 @@
 .button {
   &.button-danger {
     background-color: @button-sub-color;
+
     &:active {
       background-color: darken(@button-sub-color, 10%);
     }
@@ -34,12 +35,17 @@
   font-size: 0.8rem;
   cursor: pointer;
   border: 0;
+  z-index: 2;
+  transition: all .2s;
 
   input[type="submit"] &,
   input[type="button"] & {
     width: 100%;
   }
 
+  &.active{
+      background-color: darken(@button-main-color, 10%);
+  }
   &:active {
     background-color: darken(@button-main-color, 10%);
   }
@@ -58,8 +64,7 @@
     line-height: @button-small-height;
   }
 
-  &.button-round,
-  .button-round & {
+  &.button-round {
     &,
     &:after {
       border-radius: (@button-height);

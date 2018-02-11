@@ -1,0 +1,38 @@
+@import '../veriables.less';
+@import '../mixin.less';
+
+.grids {
+  position: relative;
+  overflow: hidden;
+  .hairline-border-before(#D9D9D9, 0);
+
+
+}
+
+.grid {
+  position: relative;
+  float: left;
+  padding: 20px 10px;
+  width: 33.33333333%;
+  box-sizing: border-box;
+  text-decoration: none;
+  .hairline(left, #D9D9D9);
+  .hairline(bottom, #D9D9D9);
+  transition: all .2s;
+
+  &:active {
+    background-color: #E4E4E4;
+  }
+
+
+  text-align: center;
+  color: #5bb8cb;
+  .grid_label {
+    .ellipsis();
+
+  }
+
+  .icon.iconfont {
+    font-size: 24px;
+  }
+}
