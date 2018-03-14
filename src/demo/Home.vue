@@ -2,7 +2,7 @@
 <div class="page">
   <Header>
     <Title>vue-x</Title>
-    <header-button>关于</header-button>
+    <!-- <header-button :icon="false">关于</header-button> -->
   </Header>
   <page-content>
     <p class="readme">
@@ -27,6 +27,12 @@
       </li>
       <li>
         <router-link :to="{ name: 'List'}">List</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'Form'}">Form</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'Modal'}">Modal</router-link>
       </li>
     </ul>
   </page-content>
@@ -53,7 +59,10 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+
+@import '../assets/font/iconfont.css';
+
 .readme {
     font-size: 12px;
     padding: 8px;

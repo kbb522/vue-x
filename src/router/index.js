@@ -7,6 +7,8 @@ import Button from '@/demo/Button'
 import ButtonGroup from '@/demo/Button-Group'
 import Grid from '@/demo/Grid'
 import List from '@/demo/List'
+import Form from '@/demo/Form'
+import Modal from '@/demo/Modal'
 
 Vue.use(Router)
 
@@ -36,6 +38,14 @@ const router = new Router({
       path: '/list',
       name: 'List',
       component: List
+    }, {
+      path: '/form',
+      name: 'Form',
+      component: Form
+    }, {
+      path: '/modal',
+      name: 'Modal',
+      component: Modal
     }
   ]
 })

@@ -6,11 +6,11 @@
         <slot></slot>
         <i class="icon icon-form-checkbox" v-if="checkbox"></i>
         <i class="icon icon-form-radio" v-if="radio"></i>
-        <div class="link-arrow icon icon-link" v-if="link"></div>
+        <i class="link-arrow iconfont icon-jiantouyou" v-if="link"></i>
   </label>
   <div :class="'item-inner ' + (link ? 'item-link' : '')" v-if="!checkbox && !radio">
     <slot></slot>
-    <div class="link-arrow icon icon-link" v-if="link"></div>
+    <i class="link-arrow iconfont icon-jiantouyou" v-if="link"></i>
   </div>
 </li>
 </template>
@@ -19,8 +19,8 @@
 export default {
   props: {
     link: {
-      type: String,
-      default: ''
+      type: Boolean,
+      default: false
     },
     checkbox: {
       type: Boolean,

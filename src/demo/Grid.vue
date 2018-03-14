@@ -139,7 +139,6 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-@import '../assets/font/iconfont.css';
 
 .page-content {
     font-size: 12px;
