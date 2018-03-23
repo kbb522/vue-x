@@ -43,8 +43,19 @@
       <li>
         <router-link :to="{ name: 'Steps'}">Steps</router-link>
       </li>
+      <li>
+        <a href="#" @click.prevent="onOpen">打开</a>
+      </li>
+        <a href="#" @click.prevent="openState">查看state</a>
+      <li>
+      </li>
+      <li v-for="item in list">
+        {{ item.name }}
+      </li>
+
     </ul>
   </page-content>
+  <alert ref="alert"></alert>
 </div>
 </template>
 
@@ -52,24 +63,68 @@
 import Page from '@/components/page'
 import Content from '@/components/content'
 import {
+  mapActions,
+  mapGetters,
+  mapState
+} from 'vuex'
+
+import {
   Header,
   hButton,
   Title
 } from '@/components/header'
 
+import {
+  Alert
+} from '@/components/modal'
+
 export default {
   name: 'Home',
+  watch: {
+    count1: function() {
+      console.log(`watch: ${this.count1}`)
+    },
+
+    // list: function() {
+    //   //console.log(`watch: ${this.list}`)
+    // }
+  },
+
+  mounted: function() {
+
+  },
+  computed: {
+    count1() {
+      return this.$store.state.count
+    },
+    ...mapGetters({
+      list: 'getList'
+    })
+  },
+  created() {
+    //this.$store.dispatch('listUpdate')
+  },
+  methods: {
+    openState: function() {
+      console.log(this.$store)
+    },
+    onOpen: function(event) {
+      //alert(event)
+      let { dispatch } = this.$store;
+      dispatch('listUpdate')
+    }
+  },
   components: {
     Header,
     Title,
     'page-content': Content,
-    'header-button': hButton
+    'header-button': hButton,
+    Alert
   }
 }
 </script>
 
 <style lang="less">
-
 @import '../assets/font/iconfont.css';
 
 .readme {
