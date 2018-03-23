@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 //import App from './App'
+import store from './store'
 import router from './router'
 import FastClick from 'fastclick'
 import db from './utils/SessionStorage'
@@ -10,7 +11,7 @@ import Back from './directives/back'
 
 Vue.config.productionTip = false
 
-new Vue({router}).$mount('#app')
+new Vue({store,router}).$mount('#app')
 
 Vue.directive('back-link', Back)
 const router1 = router
