@@ -9,6 +9,9 @@ import Grid from '@/demo/Grid'
 import List from '@/demo/List'
 import Form from '@/demo/Form'
 import Modal from '@/demo/Modal'
+import Popup from '@/demo/Popup'
+import Navbar from '@/demo/Navbar'
+import Steps from '@/demo/Steps'
 
 Vue.use(Router)
 
@@ -46,6 +49,18 @@ const router = new Router({
       path: '/modal',
       name: 'Modal',
       component: Modal
+    }, {
+      path: '/popup',
+      name: 'Popup',
+      component: Popup
+    }, {
+      path: '/navbar',
+      name: 'Navbar',
+      component: Navbar
+    }, {
+      path: '/steps',
+      name: 'Steps',
+      component: Steps
     }
   ]
 })

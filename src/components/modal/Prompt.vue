@@ -54,18 +54,16 @@ export default {
     return {
       mutableInput: this.input
     }
-  }
+  },
   components: {
     Modal
   },
   methods: {
     open() {
       this.$refs.modal.open()
-      this.$emit('open', this)
     },
     close() {
       this.$refs.modal.close()
-      this.$emit('close', this)
     },
     _onOk() {
       if (!this.mutableInput) return false

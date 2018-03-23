@@ -15,7 +15,7 @@ new Vue({router}).$mount('#app')
 Vue.directive('back-link', Back)
 const router1 = router
 router.beforeEach(function(to, from, next) {
-  console.log(to, from, next)
+  //console.log(to, from, next)
   try {
     const _to = to.path
     const _from = from.path

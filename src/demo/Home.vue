@@ -34,6 +34,15 @@
       <li>
         <router-link :to="{ name: 'Modal'}">Modal</router-link>
       </li>
+      <li>
+        <router-link :to="{ name: 'Popup'}">Popup</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'Navbar'}">Navbar</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'Steps'}">Steps</router-link>
+      </li>
     </ul>
   </page-content>
 </div>

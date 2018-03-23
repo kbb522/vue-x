@@ -16,9 +16,6 @@ export default {
   components: {
     Modal
   },
-
-
-
   props: {
     show: { // init status
       type: Boolean,
@@ -30,7 +27,7 @@ export default {
     },
     content: {
       type: String,
-      default: ''
+      default: 'hello world'
     },
     okText: {
       type: String,
