@@ -1,0 +1,43 @@
+@import '../veriables.less';
+@import '../mixin.less';
+
+.loading-modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  padding: 0.4rem;
+  margin-left: -1.25rem;
+  margin-top: -1.25rem;
+  background: rgba(0,0,0,0.8);
+  z-index: 11000;
+  border-radius: 0.25rem;
+  transition: opacity .3s;
+  opacity: 1;
+  
+  &.loading-modal-enter-active, &.loading-modal-leave-active {
+    transition: opacity .2s;
+  }
+  &.loading-modal-enter,
+  /* .fade-leave-active below version 2.1.8 */ 
+  &.loading-modal-leave-to {
+    opacity: 0;
+  }
+  // https://cn.vuejs.org/v2/guide/transitions.html
+  // 一般下面的这个可以省略，默认的CSS就是这二个类名定义的值，除非有自己的定义
+  &.loading-modal-enter-to,
+  /* .fade-leave-active below version 2.1.8 */ 
+  &.loading-modal-leave {
+    opacity: 1;
+  }
+
+  .loading {
+    .loading();
+    display: block;
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .loading-white {
+    .loading-white();
+  }
+}

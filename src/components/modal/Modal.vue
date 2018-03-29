@@ -45,7 +45,7 @@ export default {
     }
   },
   methods: {
-    open() {
+    open () {
       this.mutableShow = true
       this.$emit('open', this)
     },

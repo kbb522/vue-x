@@ -5,22 +5,20 @@
   <div slot="buttons" class="modal-buttons">
     <span class="modal-button" @click="_onClick">{{okText}}</span>
   </div>
+  <div></div>
 </modal>
 </template>
 <script>
-import
-Modal
-from './Modal'
+import Modal from './Modal';
 
 export default {
   components: {
     Modal
   },
 
-
-
   props: {
-    show: { // init status
+    show: {
+      // init status
       type: Boolean,
       default: false
     },
@@ -41,27 +39,26 @@ export default {
     }
   },
 
-
   methods: {
     open() {
-      this.$refs.modal.open()
-      this.$emit('open', this)
+      this.$refs.modal.open();
+      this.$emit("open", this);
     },
     close() {
-      this.$refs.modal.close()
-      this.$emit('close', this)
+      this.$refs.modal.close();
+      this.$emit("close", this);
     },
     _onClick() {
       if (this.onOk) {
-        this.onOk()
+        this.onOk();
       }
-      this.close()
+      this.close();
     }
   }
-}
+};
 </script>
 
 
 <style lang="less">
-@import './Alert.less';
+@import "./Alert.less";
 </style>

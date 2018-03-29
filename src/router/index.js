@@ -9,6 +9,7 @@ import Grid from '@/demo/Grid'
 import List from '@/demo/List'
 import Form from '@/demo/Form'
 import Modal from '@/demo/Modal'
+import Loading from '@/demo/Loading'
 
 Vue.use(Router)
 
@@ -46,6 +47,10 @@ const router = new Router({
       path: '/modal',
       name: 'Modal',
       component: Modal
+    }, {
+      path: '/loading',
+      name: 'Loading',
+      component: Loading
     }
   ]
 })

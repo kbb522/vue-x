@@ -15,7 +15,7 @@
 
 .modal {
   width: 13.5rem;
-  position: fixed;
+  position: absolute; // ios 11 如果用fixed定位，里的input会出现没有光标，还会错位
   z-index: 11000;
   left: 50%;
   margin-left: -6.75rem;
@@ -49,6 +49,13 @@
   text-align: center;
   +.modal-text {
     margin-top: 0.25rem;
+    & > div> div {
+      padding-top: 10px;
+    }
+    .modal-input {
+      padding: 8px;
+      font-size: 0.7rem;
+    }
   }
 }
 .modal-buttons {

@@ -1,21 +1,24 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-//import App from './App'
+// import App from './App'
 import store from './store'
 import router from './router'
 import FastClick from 'fastclick'
 import db from './utils/SessionStorage'
 
 import Back from './directives/back'
+import Focus from './directives/focus'
 
 Vue.config.productionTip = false
 
-new Vue({store,router}).$mount('#app')
+new Vue({store, router}).$mount('#app')
 
 Vue.directive('back-link', Back)
+// 注册一个全局自定义指令 `v-focus`
+Vue.directive('focus', Focus)
 const router1 = router
-router.beforeEach(function(to, from, next) {
+router.beforeEach(function (to, from, next) {
   console.log(to, from, next)
   try {
     const _to = to.path
@@ -41,13 +44,13 @@ router.beforeEach(function(to, from, next) {
   next()
 })
 
-//Vum.router(router)
+// Vum.router(router)
 
 /* eslint-disable no-new */
-//new Vue({
-//el: '#app',
-///router,
+// new Vue({
+// el: '#app',
+/// router,
 // components: { App },
 // template: '<App/>'
-//})
+// })
 FastClick.attach(document.body)

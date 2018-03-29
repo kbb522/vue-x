@@ -13,7 +13,7 @@
           <div class="item-input-row">
             <div class="item-title form-label">姓名</div>
             <div class="form-input">
-              <input type="text" placeholder="姓名" v-model="name">
+              <input  type="text" placeholder="姓名" v-model="name">
             </div>
           </div>
         </div>

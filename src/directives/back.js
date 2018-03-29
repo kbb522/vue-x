@@ -1,7 +1,7 @@
 export default {
-  inserted(el) {
+  inserted (el) {
     el.addEventListener('click', () => {
-      window.history.back();
+      window.history.back()
     })
   }
 }

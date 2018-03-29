@@ -35,10 +35,14 @@
         <router-link :to="{ name: 'Modal'}">Modal</router-link>
       </li>
       <li>
+        <router-link :to="{ name: 'Loading'}">Loading</router-link>
+      </li>
+      <li>
         <a href="#" @click.prevent="onOpen">打开</a>
       </li>
         <a href="#" @click.prevent="openState">查看state</a>
       <li>
+        
       </li>
       <li v-for="item in list">
         {{ item.name }}

@@ -9,7 +9,7 @@ const state = {
 // getters
 const getters = {
   getList(state, getters, rootState) {
-    return [...state.list].sort((a, b) => a.id < b.id)
+    return [...state.list].sort((a, b) => a.id > b.id)
   }
 }
 
@@ -41,7 +41,7 @@ const actions = {
         model: "bjc.base.config",
         fields: [],
         limit: 20,
-        offset: 1,
+        offset: 0,
         sort: '',
         domain: []
       }).then(function(response) {
