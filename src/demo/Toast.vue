@@ -4,15 +4,12 @@
     <Title>自动关闭Toast窗口</Title>
     <header-button v-back-link>返回</header-button>
   </Header>
-
   <page-content>
     <p>
       <m-button @click.stop.native="openToast">测试Toast</m-button>
     </p>
     <toast ref="toast" type="xiujia" text="测试文字 "></toast>
   </page-content>
-
-
 </div>
 </template>
 <script>

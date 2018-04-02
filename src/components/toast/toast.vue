@@ -3,10 +3,10 @@
         <transition name="toast">
         <div class="toast" v-if="mutableShow">
             <div class="icon-wrap"><i :class="'icon iconfont icon-' + type"></i></div>
-            <div class="text">{{text}}</div>
+            <div class="text">{{text + ',' + m + '秒后自动关闭'}}</div>
         </div>
         </transition>
-        <overlay ref='overlay' :show="mutableShow" :click="close"></overlay>
+        <overlay ref='overlay' :transparent="true" :show="mutableShow" :click="close"></overlay>
     </div>
 </template>
 
@@ -36,7 +36,8 @@ export default {
   },
   data() {
     return {
-      mutableShow: this.show
+      mutableShow: this.show,
+      m: 3
     };
   },
   methods: {
@@ -44,10 +45,10 @@ export default {
       this.mutableShow = true;
       this.onOpen();
       this.$emit("open");
-      clearTimeout(this.timer)
-      this.timer = setTimeout(()=>{
-          this.close();
-      },3000)
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        this.close();
+      }, this.m * 1000);
     },
     close() {
       this.mutableShow = false;
@@ -58,5 +59,5 @@ export default {
 </script>
 
 <style lang="less">
-@import './toast.less';
+@import "./toast.less";
 </style>
