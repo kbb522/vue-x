@@ -1,0 +1,29 @@
+.toast {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: .5rem 1.1rem;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 12000;
+    border-radius: .25rem;
+    transition: all .3s;
+    color: white;
+    text-align: center;
+    min-width: 5.5rem;
+    opacity: 1;
+    &.toast-enter,
+    &.toast-leave-to {
+        opacity: 0;
+    }
+    .icon-wrap {
+        margin: .2rem 0;
+    }
+    .text {
+        margin: .2rem 0;
+        font-size: .8rem;
+    }
+    .icon {
+        font-size: 1.8rem;
+    }
+}

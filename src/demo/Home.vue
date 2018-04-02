@@ -38,13 +38,15 @@
         <router-link :to="{ name: 'Loading'}">Loading</router-link>
       </li>
       <li>
+        <router-link :to="{ name: 'Toast'}">Toast</router-link>
+      </li>
+      <li>
         <a href="#" @click.prevent="onOpen">打开</a>
       </li>
-        <a href="#" @click.prevent="openState">查看state</a>
       <li>
-        
+        <a href="#" @click.prevent="openState">查看state</a>
       </li>
-      <li v-for="item in list">
+      <li v-bind:key="item.id" v-for="item in list">
         {{ item.name }}
       </li>
 
@@ -55,45 +57,33 @@
 </template>
 
 <script>
-import Page from '@/components/page'
-import Content from '@/components/content'
-import {
-  mapActions,
-  mapGetters,
-  mapState
-} from 'vuex'
+import Page from "@/components/page";
+import Content from "@/components/content";
+import { mapActions, mapGetters, mapState } from "vuex";
 
-import {
-  Header,
-  hButton,
-  Title
-} from '@/components/header'
+import { Header, hButton, Title } from "@/components/header";
 
-import {
-  Alert
-} from '@/components/modal'
+import { Alert } from "@/components/modal";
 
 export default {
-  name: 'Home',
+  name: "Home",
   watch: {
     count1: function() {
-      console.log(`watch: ${this.count1}`)
-    },
+      console.log(`watch: ${this.count1}`);
+    }
 
     // list: function() {
     //   //console.log(`watch: ${this.list}`)
     // }
   },
 
-  mounted: function() {
-
-  },
+  mounted: function() {},
   computed: {
     count1() {
-      return this.$store.state.count
+      return this.$store.state.count;
     },
     ...mapGetters({
-      list: 'getList'
+      list: "getList"
     })
   },
   created() {
@@ -101,41 +91,41 @@ export default {
   },
   methods: {
     openState: function() {
-      console.log(this.$store)
+      console.log(this.$store);
     },
     onOpen: function(event) {
       //alert(event)
       let { dispatch } = this.$store;
-      dispatch('listUpdate')
+      dispatch("listUpdate");
     }
   },
   components: {
     Header,
     Title,
-    'page-content': Content,
-    'header-button': hButton,
+    "page-content": Content,
+    "header-button": hButton,
     Alert
   }
-}
+};
 </script>
 
 <style lang="less">
-@import '../assets/font/iconfont.css';
+@import "../assets/font/iconfont.css";
 
 .readme {
-    font-size: 12px;
-    padding: 8px;
-    color: #666;
+  font-size: 12px;
+  padding: 8px;
+  color: #666;
 }
 .mainList {
-    li {
-        padding: 8px;
-        border-bottom: 1px solid #efefef;
+  li {
+    padding: 8px;
+    border-bottom: 1px solid #efefef;
 
-        a:active {
-            color: darken(#666, 20%);
-            background: transparent;
-        }
+    a:active {
+      color: darken(#666, 20%);
+      background: transparent;
     }
+  }
 }
 </style>
