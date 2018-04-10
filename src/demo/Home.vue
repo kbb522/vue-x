@@ -44,6 +44,12 @@
         <router-link :to="{ name: 'Steps'}">Steps</router-link>
       </li>
       <li>
+        <router-link :to="{ name: 'Toast'}">Toast</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'Slider'}">Slider</router-link>
+      </li>
+      <li>
         <a href="#" @click.prevent="onOpen">打开</a>
       </li>
         <a href="#" @click.prevent="openState">查看state</a>

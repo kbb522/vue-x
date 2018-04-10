@@ -12,6 +12,8 @@ import Modal from '@/demo/Modal'
 import Popup from '@/demo/Popup'
 import Navbar from '@/demo/Navbar'
 import Steps from '@/demo/Steps'
+import Toast from '@/demo/Toast'
+import Slider from '@/demo/Slider'
 
 Vue.use(Router)
 
@@ -61,6 +63,14 @@ const router = new Router({
       path: '/steps',
       name: 'Steps',
       component: Steps
+    }, {
+      path: '/toast',
+      name: 'Toast',
+      component: Toast
+    }, {
+      path: '/slider',
+      name: 'Slider',
+      component: Slider
     }
   ]
 })
