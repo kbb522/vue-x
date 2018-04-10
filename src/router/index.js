@@ -11,6 +11,7 @@ import Form from '@/demo/Form'
 import Modal from '@/demo/Modal'
 import Loading from '@/demo/Loading'
 import Toast from '@/demo/Toast'
+import Scroll from '@/demo/Scroll'
 
 Vue.use(Router)
 
@@ -55,6 +56,10 @@ const router = new Router({
     path: '/toast',
     name: 'Toast',
     component: Toast
+  }, {
+    path: '/scroll',
+    name: 'Scroll',
+    component: Scroll
   }]
 })
 

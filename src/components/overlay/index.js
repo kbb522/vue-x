@@ -1,4 +1,4 @@
-import Overlay from './overlay'
+import Overlay from './overlay';
 
 
 export {

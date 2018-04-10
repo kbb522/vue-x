@@ -41,6 +41,9 @@
         <router-link :to="{ name: 'Toast'}">Toast</router-link>
       </li>
       <li>
+        <router-link :to="{ name: 'Scroll'}">Scroll</router-link>
+      </li>
+      <li>
         <a href="#" @click.prevent="onOpen">打开</a>
       </li>
       <li>

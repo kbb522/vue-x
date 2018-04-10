@@ -1,0 +1,91 @@
+@import '../veriables.less';
+@import '../mixin.less';
+@layerHeight: 2rem;
+.scroll {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; //background: red;
+    .scrollable;
+    &.touching .scroll-inner {
+        transition-duration: 0ms;
+    }
+    .scroll-inner {
+        position: absolute;
+        top: -@layerHeight;
+        width: 100%;
+        transition-duration: 300ms;
+    }
+    .middlecenter() {
+        .display(flex);
+        .align-items;
+        .justify-content;
+    } // 以下是默认样子
+    .pull-to-refresh-layer,
+    .infinite-layer {
+        background-color: white;
+        height: @layerHeight;
+        .middlecenter;
+        &>* {
+            display: none; // 默认头上的内容全部不显示，什么状态显示什么内容
+            //visibility: hidden;
+        }
+    } // ==========头部内容 start==========
+    .preloader {
+        .loading;
+    }
+    .label-refresh,
+    .label-down,
+    .label-up {
+        font-size: 0.6rem;
+    }
+    &.touching {
+        .pull-to-refresh-arrow {
+            width: 0.65rem;
+            height: 1rem;
+            background: no-repeat center;
+            .encoded-svg-background("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 40'><polygon points='9,22 9,0 17,0 17,22 26,22 13.5,40 0,22' fill='#8c8c8c'/></svg>");
+            background-size: 0.65rem 1rem;
+            z-index: 10;
+            transform: rotate(0deg) translate3d(0, 0, 0);
+            transition-duration: 300ms;
+        } // ==========头部内容 end==========
+        // 下拉时的样子
+        &.pull-down {
+            .pull-to-refresh-arrow {
+                display: block;
+            }
+            .label-down {
+                display: block; //visibility: hidden
+            }
+            .label-up {
+                display: none; //visibility: visible
+            }
+        } //下面是过临界值的样子
+        &.pull-up {
+            .pull-to-refresh-arrow {
+                display: block;
+                transform: rotate(180deg) translate3d(0, 0, 0);
+            }
+            .label-down {
+                display: none; //visibility: hidden
+            }
+            .label-up {
+                display: block; //visibility: visible
+            }
+        } // refreshing 刷新中样子
+        
+    }
+    &.refreshing {
+        .pull-to-refresh-arrow,
+        .label-down,
+        .label-up {
+            display: none;
+        }
+        .preloader,
+        .label-refresh {
+            display: block;
+        }
+    }
+}
