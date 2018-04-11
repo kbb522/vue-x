@@ -12,12 +12,10 @@ import Focus from './directives/focus'
 
 Vue.config.productionTip = false
 
-new Vue({store, router}).$mount('#app')
-
-alert(1)
 Vue.directive('back-link', Back)
 // 注册一个全局自定义指令 `v-focus`
 Vue.directive('focus', Focus)
+new Vue({store, router}).$mount('#app')
 const router1 = router
 router.beforeEach(function (to, from, next) {
   console.log(to, from, next)

@@ -217,6 +217,9 @@ import Scroll from "@/components/scroll";
 import { List, ListItem } from "@/components/list";
 
 export default {
+  beforeCreate(){
+    alert(2)
+  },
   components: {
     List,
     ListItem,
