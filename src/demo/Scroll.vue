@@ -218,7 +218,6 @@ import { List, ListItem } from "@/components/list";
 
 export default {
   beforeCreate(){
-    alert(2)
   },
   components: {
     List,

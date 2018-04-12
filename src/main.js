@@ -18,7 +18,7 @@ Vue.directive('focus', Focus)
 new Vue({store, router}).$mount('#app')
 const router1 = router
 router.beforeEach(function (to, from, next) {
-  console.log(to, from, next)
+  //console.log(to, from, next)
   try {
     const _to = to.path
     const _from = from.path
