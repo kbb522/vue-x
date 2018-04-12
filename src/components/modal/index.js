@@ -1,6 +1,6 @@
 import Modal from './Modal'
 import Alert from './Alert'
-import Confirm from './Confirm'
+import Confirm from './Confrim'
 import Prompt from './Prompt'
 
 export {
