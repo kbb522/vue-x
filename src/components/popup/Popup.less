@@ -1,0 +1,16 @@
+.popup{
+  position: absolute;
+  background-color:#fff;
+  z-index: 999;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: top .2s ease;
+  &.popup-show-full {
+    top: 0;
+  }
+  &.popup-show-half {
+    top: 50%;
+  }
+}
