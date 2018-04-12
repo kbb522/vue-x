@@ -1,63 +1,74 @@
 <template>
-    <div>
-        <transition name="toast">
-        <div class="toast" v-if="mutableShow">
-            <div class="icon-wrap"><i :class="'icon iconfont icon-' + type"></i></div>
-            <div class="text">{{text + ',' + m + '秒后自动关闭'}}</div>
+  <div>
+    <overlay :opacity="0" :show="mutableShow"></overlay>
+    <transition name="fade">
+      <div class="toast" v-if="mutableShow">
+        <div :class="'t-box '+ dcls">
+          <i class="t-icon"></i>
+          <p>{{ dcontent }}</p>
         </div>
-        </transition>
-        <overlay ref='overlay' :transparent="true" :show="mutableShow" :click="close"></overlay>
-    </div>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
-import { Overlay } from "../overlay";
-export default {
-  components: {
+  import {
     Overlay
-  },
-  props: {
-    text: {
-      type: String,
-      default: ""
+    } from '@/components/overlay'
+  export default {
+    components: {
+      Overlay
     },
-    show: {
-      type: Boolean,
-      default: false
+
+    props: {
+      show: { // init status
+        type: Boolean,
+        default: false
+      },
+      overlayClose: {
+        type: Boolean,
+        default: false
+      },
+      content: {
+        type: String,
+        default: ''
+      },
+      cls: {
+        type: String,
+        default: ''
+      }
     },
-    type: {
-      type: String,
-      default: "success"
-    },
-    onOpen: {
-      type: Function,
-      default: () => {}
-    }
-  },
-  data() {
+
+    data() {
     return {
       mutableShow: this.show,
-      m: 3
-    };
+      dcontent: this.content,
+      dcls: this.cls
+    }
   },
   methods: {
     open() {
-      this.mutableShow = true;
-      this.onOpen();
-      this.$emit("open");
-      clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
-        this.close();
-      }, this.m * 1000);
+      this.mutableShow = true
+      this.closeTime()
     },
     close() {
-      this.mutableShow = false;
-      this.$emit("close");
+      this.mutableShow = false
+    },
+    closeTime() {
+      let _this = this
+      setTimeout(() => {
+        _this.close()
+      },2000)
+    },
+    overlayClick() {
+      this.mutableShow = false
     }
   }
-};
+  }
 </script>
 
+
 <style lang="less">
-@import "./toast.less";
+  @import './Toast.less';
 </style>

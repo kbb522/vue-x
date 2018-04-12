@@ -79,9 +79,9 @@ import {
 import Content from '@/components/content'
 
 export default {
-  methond: {
+  methods: {
     fn: () => {
-      alert();
+      alert(0);
     }
   },
   components: {

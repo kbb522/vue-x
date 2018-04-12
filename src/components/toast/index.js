@@ -1,3 +1,5 @@
-import toast from './toast'
+import Toast from './Toast'
 
-export default toast
+export {
+  Toast
+  }

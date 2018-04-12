@@ -9,58 +9,70 @@ import Grid from '@/demo/Grid'
 import List from '@/demo/List'
 import Form from '@/demo/Form'
 import Modal from '@/demo/Modal'
-import Loading from '@/demo/Loading'
+import Popup from '@/demo/Popup'
+import Navbar from '@/demo/Navbar'
+import Steps from '@/demo/Steps'
 import Toast from '@/demo/Toast'
-import Scroll from '@/demo/Scroll'
+import Slider from '@/demo/Slider'
 
 Vue.use(Router)
 
 const router = new Router({
-  routes: [{
-    path: '/',
-    name: 'Home',
-    component: Home
-  }, {
-    path: '/flex',
-    name: 'Flex',
-    component: Flex
-  }, {
-    path: '/button-group',
-    name: 'ButtonGroup',
-    component: ButtonGroup
-  }, {
-    path: '/button',
-    name: 'Button',
-    component: Button
-  }, {
-    path: '/grid',
-    name: 'Grid',
-    component: Grid
-  }, {
-    path: '/list',
-    name: 'List',
-    component: List
-  }, {
-    path: '/form',
-    name: 'Form',
-    component: Form
-  }, {
-    path: '/modal',
-    name: 'Modal',
-    component: Modal
-  }, {
-    path: '/loading',
-    name: 'Loading',
-    component: Loading
-  }, {
-    path: '/toast',
-    name: 'Toast',
-    component: Toast
-  }, {
-    path: '/scroll',
-    name: 'Scroll',
-    component: Scroll
-  }]
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+    }, {
+      path: '/flex',
+      name: 'Flex',
+      component: Flex
+    }, {
+      path: '/button-group',
+      name: 'ButtonGroup',
+      component: ButtonGroup
+    }, {
+      path: '/button',
+      name: 'Button',
+      component: Button
+    }, {
+      path: '/grid',
+      name: 'Grid',
+      component: Grid
+    }, {
+      path: '/list',
+      name: 'List',
+      component: List
+    }, {
+      path: '/form',
+      name: 'Form',
+      component: Form
+    }, {
+      path: '/modal',
+      name: 'Modal',
+      component: Modal
+    }, {
+      path: '/popup',
+      name: 'Popup',
+      component: Popup
+    }, {
+      path: '/navbar',
+      name: 'Navbar',
+      component: Navbar
+    }, {
+      path: '/steps',
+      name: 'Steps',
+      component: Steps
+    }, {
+      path: '/toast',
+      name: 'Toast',
+      component: Toast
+    }, {
+      path: '/slider',
+      name: 'Slider',
+      component: Slider
+    }
+  ]
 })
 
 export default router
