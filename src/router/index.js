@@ -14,6 +14,8 @@ import Navbar from '@/demo/Navbar'
 import Steps from '@/demo/Steps'
 import Toast from '@/demo/Toast'
 import Slider from '@/demo/Slider'
+import Scroll from '@/demo/Scroll'
+import SwiperPic from '@/demo/SwiperPic'
 
 Vue.use(Router)
 
@@ -71,6 +73,14 @@ const router = new Router({
       path: '/slider',
       name: 'Slider',
       component: Slider
+    }, {
+      path: '/scroll',
+      name: 'Scroll',
+      component: Scroll
+    }, {
+      path: '/swiperpic',
+      name: 'SwiperPic',
+      component: SwiperPic
     }
   ]
 })
