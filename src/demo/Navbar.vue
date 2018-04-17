@@ -7,7 +7,15 @@
 
     <page-content>
       <Navbar>
-        123
+        <div name="页面一">
+          页面一
+        </div>
+        <div name="页面二">
+          页面二
+        </div>
+        <div name="页面三">
+          页面三
+        </div>
       </Navbar>
 
     </page-content>
@@ -25,7 +33,7 @@
     } from '@/components/header'
 
   import Content from '@/components/content'
-  import Navbar from '@/components/navbar'
+  import { Navbar } from '@/components/navbar'
 
 
   export default {
@@ -36,26 +44,7 @@
       'page-content': Content,
       'header-button': hButton
     },
-    props: {
-      nTabnum: {
-        type: Number,
-        default: 1
-      }
-    },
-    data () {
-      return {
-        isshow: false,
-        tabnum: this.nTabnum
-      }
-    },
-    name: 'navbar-name',
-    methods: {
-      retabnum: function (n) {
-        console.log(n)
-        this.tabnum = n
-      }
-    }
-
+    name: 'navbar-name'
   }
 </script>
 <style lang="less" scoped>
@@ -63,13 +52,6 @@
   padding:10px;
   p{
     margin-bottom:10px;
-  }
-  .a1{color:#f00;}
-  .b1{display:block;}
-  .b2{display:none;}
-  .navbar-tab{display:-webkit-box;background-color:#f4f4f4;
-    a{display:block;text-align:center;padding:5px;-webkit-box-flex:1;}
-    .a1{transition:all .2s ease;background-color:#ccc;}
   }
 }
 </style>
