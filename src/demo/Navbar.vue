@@ -7,16 +7,7 @@
 
     <page-content>
       <Navbar>
-        <div slot="tab" class="navbar-tab">
-          <a @click="retabnum(1)" href="javascript:;" :class="tabnum==1 ? 'a1' : 'a2'">选项一</a>
-          <a @click="retabnum(2)" href="javascript:;" :class="tabnum==2 ? 'a1' : 'a2'">选项二</a>
-          <a @click="retabnum(3)" href="javascript:;" :class="tabnum==3 ? 'a1' : 'a2'">选项三</a>
-        </div>
-        <div slot="bd" class="navbar-bd">
-          <div id="tab1" :class="tabnum==1 ? 'b1' : 'b2'">页面一</div>
-          <div id="tab2" :class="tabnum==2 ? 'b1' : 'b2'">页面二</div>
-          <div id="tab3" :class="tabnum==3 ? 'b1' : 'b2'">页面三</div>
-        </div>
+        123
       </Navbar>
 
     </page-content>
