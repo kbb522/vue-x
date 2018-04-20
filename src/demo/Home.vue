@@ -56,6 +56,18 @@
         <router-link :to="{ name: 'SwiperPic'}">SwiperPic</router-link>
       </li>
       <li>
+        <router-link :to="{ name: 'Toptip'}">Toptip</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'Tabar'}">Tabar</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'SlideDel'}">SlideDel</router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'Count'}">Count</router-link>
+      </li>
+      <li>
         <a href="#" @click.prevent="onOpen">打开</a>
       </li>
         <a href="#" @click.prevent="openState">查看state</a>

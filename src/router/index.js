@@ -16,6 +16,10 @@ import Toast from '@/demo/Toast'
 import Slider from '@/demo/Slider'
 import Scroll from '@/demo/Scroll'
 import SwiperPic from '@/demo/SwiperPic'
+import Toptip from '@/demo/Toptip'
+import Tabar from '@/demo/Tabar'
+import SlideDel from '@/demo/SlideDel'
+import Count from '@/demo/Count'
 
 Vue.use(Router)
 
@@ -81,6 +85,22 @@ const router = new Router({
       path: '/swiperpic',
       name: 'SwiperPic',
       component: SwiperPic
+    }, {
+      path: '/toptip',
+      name: 'Toptip',
+      component: Toptip
+    }, {
+      path: '/tabar',
+      name: 'Tabar',
+      component: Tabar
+    }, {
+      path: '/slideDel',
+      name: 'SlideDel',
+      component: SlideDel
+    }, {
+      path: '/count',
+      name: 'Count',
+      component: Count
     }
   ]
 })

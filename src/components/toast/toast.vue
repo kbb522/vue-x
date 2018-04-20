@@ -41,12 +41,12 @@
     },
 
     data() {
-    return {
-      mutableShow: this.show,
-      dcontent: this.content,
-      dcls: this.cls
-    }
-  },
+      return {
+        mutableShow: this.show,
+        dcontent: this.content,
+        dcls: this.cls
+      }
+    },
   methods: {
     open() {
       this.mutableShow = true
