@@ -21,6 +21,9 @@ import Tabar from '@/demo/Tabar'
 import SlideDel from '@/demo/SlideDel'
 import Count from '@/demo/Count'
 import FormValidate from '@/demo/Form.validate'
+import Actionsheet from '@/demo/Actionsheet'
+import Select from '@/demo/Select'
+import DatetimePicker from '@/demo/datetimePicker'
 
 Vue.use(Router)
 
@@ -106,6 +109,19 @@ const router = new Router({
       path: '/formValidate',
       name: 'FormValidate',
       component: FormValidate
+    }, {
+      path: '/actionsheet',
+      name: 'Actionsheet',
+      component: Actionsheet
+    }, {
+      path: '/select',
+      name: 'Select',
+      component: Select
+    }, {
+      path: '/datetimePicker',
+      name: 'DatetimePicker',
+      component: DatetimePicker
+
     }
   ]
 })

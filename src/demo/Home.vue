@@ -13,6 +13,10 @@
     </p>
     <p class="readme">互联网创业的关键在于执行，希望好的想法+坚持执行=产品的成功！<br>--徐毅 2017.12.13</p>
     <ul class="mainList">
+      <li v-for="item,index in menulist" :key="index">
+        <router-link :to="item.name">{{ index+1 }}、{{ item.name }}</router-link>
+      </li>
+      <!--
       <li>
         <router-link :to="{ name: 'Flex'}">Flex-layout</router-link>
       </li>
@@ -70,6 +74,7 @@
       <li>
         <router-link :to="{ name: 'Count'}">Count</router-link>
       </li>
+      -->
       <li>
         <a href="#" @click.prevent="onOpen">打开</a>
       </li>
@@ -107,6 +112,34 @@ import {
 
 export default {
   name: 'Home',
+  data: function () {
+    return {
+      menulist: [
+        {"name":"Flex"},
+        {"name":"Button"},
+        {"name":"ButtonGroup"},
+        {"name":"Grid"},
+        {"name":"List"},
+        {"name":"Form"},
+        {"name":"Modal"},
+        {"name":"Popup"},
+        {"name":"Navbar"},
+        {"name":"Steps"},
+        {"name":"Toast"},
+        {"name":"Slider"},
+        {"name":"Scroll"},
+        {"name":"SwiperPic"},
+        {"name":"Toptip"},
+        {"name":"Tabar"},
+        {"name":"SlideDel"},
+        {"name":"Count"},
+        {"name":"Actionsheet"},
+        {"name":"Select"},
+        {"name":"datetimePicker"}
+
+      ]
+    }
+  },
   watch: {
     count1: function() {
       console.log(`watch: ${this.count1}`)

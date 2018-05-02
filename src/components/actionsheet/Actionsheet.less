@@ -1,0 +1,29 @@
+@import '../veriables.less';
+@import '../mixin.less';
+
+.actionsheet-box{position:fixed;z-index:101;left:0;right:0;bottom:0;background:#fff;text-align:center;
+
+  .sheet-t{}
+  .sheet-sel li{position:relative;
+    .hairline(top, #ccc);
+  }
+  .sheet-cannel{
+    border-top:5px solid #ccc;
+  }
+}
+
+
+
+/* 可以设置不同的进入和离开动画 */
+/* 设置持续时间和动画函数 */
+.sheet-enter-active {
+  transition: all .3s ease;
+}
+.sheet-leave-active {
+  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.sheet-enter, .sheet-leave-to
+  /* .sheet-leave-active for below version 2.1.8 */ {
+  transform: translateY(130px);
+  opacity: 0;
+}
