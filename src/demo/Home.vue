@@ -32,6 +32,9 @@
         <router-link :to="{ name: 'Form'}">Form</router-link>
       </li>
       <li>
+        <router-link :to="{ name: 'FormValidate'}">FormValidate</router-link>
+      </li>
+      <li>
         <router-link :to="{ name: 'Modal'}">Modal</router-link>
       </li>
       <li>
@@ -73,7 +76,7 @@
         <a href="#" @click.prevent="openState">查看state</a>
       <li>
       </li>
-      <li v-for="item in list">
+      <li v-for="item in list" :key="item.id">
         {{ item.name }}
       </li>
 

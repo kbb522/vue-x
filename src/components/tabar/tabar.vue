@@ -1,10 +1,9 @@
 <template>
   <div class="page">
       <div slot="tab" class="tabar-tab">
-        <a v-for="item,i in tabTitle" :class="isShowTab==i?'tabarhover':''" @click="tabarswitch(i)" href="javascript:;">
+        <a v-for="item,i in tabTitle" :class="isShowTab==i?'tabarhover':''" :key="i" @click.prevent="tabarswitch(i)" href="#">
           <span class="tabar-icon" :style="'background-image:url('+item.img+')'"></span>
           <span class="tabar-txt">{{ item.name }}</span>
-
         </a>
       </div>
       <div class="tabar-bd">

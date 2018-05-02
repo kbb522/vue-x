@@ -9,17 +9,50 @@ import db from './utils/SessionStorage'
 
 import Back from './directives/back'
 import Focus from './directives/focus'
+import xva from './directives/x.validate.js'
+
+import VeeValidate, {
+  Validator
+} from 'vee-validate'
+
+Vue.use(VeeValidate)
 
 Vue.config.productionTip = false
 
 Vue.directive('back-link', Back)
 // 注册一个全局自定义指令 `v-focus`
 Vue.directive('focus', Focus)
-new Vue({store, router}).$mount('#app')
+Vue.directive('xva', xva)
+
+const dictionary = {
+  en: {
+    messages: {
+      required: function (arr) {
+        return `${arr}这个字段不能为空`
+      }
+    }
+  }
+}
+
+Validator.extend('truthy', {
+  getMessage: field => 'The ' + field + ' value is not truthy.',
+  validate: value => {
+    console.log(value)
+    return !!value
+  }
+})
+
+// Override and merge the dictionaries
+Validator.localize(dictionary)
+
+new Vue({
+  store,
+  router
+}).$mount('#app')
 const router1 = router
 
 router.beforeEach(function (to, from, next) {
-  //console.log(to, from, next)
+  // console.log(to, from, next)
   try {
     const _to = to.path
     const _from = from.path

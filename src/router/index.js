@@ -20,6 +20,7 @@ import Toptip from '@/demo/Toptip'
 import Tabar from '@/demo/Tabar'
 import SlideDel from '@/demo/SlideDel'
 import Count from '@/demo/Count'
+import FormValidate from '@/demo/Form.validate'
 
 Vue.use(Router)
 
@@ -101,6 +102,10 @@ const router = new Router({
       path: '/count',
       name: 'Count',
       component: Count
+    }, {
+      path: '/formValidate',
+      name: 'FormValidate',
+      component: FormValidate
     }
   ]
 })
