@@ -120,6 +120,7 @@ export default {
         {"name":"ButtonGroup"},
         {"name":"Grid"},
         {"name":"List"},
+        {"name":"formValidate"},
         {"name":"Form"},
         {"name":"Modal"},
         {"name":"Popup"},
