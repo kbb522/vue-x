@@ -20,6 +20,9 @@ import Toptip from '@/demo/Toptip'
 import Tabar from '@/demo/Tabar'
 import SlideDel from '@/demo/SlideDel'
 import Count from '@/demo/Count'
+import Actionsheet from '@/demo/Actionsheet'
+import Select from '@/demo/Select'
+import DatetimePicker from '@/demo/datetimePicker'
 
 Vue.use(Router)
 
@@ -101,6 +104,18 @@ const router = new Router({
       path: '/count',
       name: 'Count',
       component: Count
+    }, {
+      path: '/actionsheet',
+      name: 'Actionsheet',
+      component: Actionsheet
+    }, {
+      path: '/select',
+      name: 'Select',
+      component: Select
+    }, {
+      path: '/datetimePicker',
+      name: 'DatetimePicker',
+      component: DatetimePicker
     }
   ]
 })

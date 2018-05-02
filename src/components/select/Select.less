@@ -1,0 +1,28 @@
+@import '../veriables.less';
+@import '../mixin.less';
+
+
+.select-cell{margin-bottom:10px;
+  .flexbox();
+  .select-cell-l{width:100px;}
+  .select-cell-r{
+    .flex(1);
+    background:#f4f4f4;
+    input{background:transparent;}
+  }
+}
+.select-ul{max-height:200px;overflow-y:auto;
+  li{position:relative;
+    .hairline(bottom,#ccc);
+  }
+  .selected:before{color:#04BE02;content:'√';position:absolute;right:5px;top:0;display:block;}
+}
+.h0{height:0!important;}
+.select-box{max-height:240px;position:fixed;left:0;right:0;bottom:0;z-index:1001;overflow:hidden;line-height:40px;transition:height .2s ease;background:#fff;}
+.select-title{
+  position:relative;text-align:center;
+  .hairline(bottom,#ccc);
+  background:#f4f4f4;
+  span{position:absolute;right:5px;top:2px;color:#04BE02;font-size:12px;}
+}
+
